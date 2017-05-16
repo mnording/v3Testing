@@ -6,7 +6,8 @@
  * Time: 16:34
  */
 session_start();
-define("URL", "http://".$_SERVER['SERVER_NAME']."/v3test");
+
+define("URL", "http://".$_SERVER['SERVER_NAME']."".dirname($_SERVER['REQUEST_URI']));
 require_once 'vendor/autoload.php';
 $_SESSION["mid"] = $_POST["mid"];
 $_SESSION["pass"] = $_POST["pass"];
